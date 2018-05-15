@@ -279,9 +279,6 @@ function parseInput ($inputStr){
 		
 	}else if(stristr($inputStr,$keyWord) != false){ //$keyWord
 		return KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName);
-		
-	}else if(stristr($inputStr,"抽") != false){	// stristr($inputStr,".jpg") != false || stristr($inputStr,"ry") != false
-		return SendImg($inputStr,$imgsReplyUrl);
 				
 	}else if(!empty($inputStr)){	// stristr($inputStr,".jpg") != false || stristr($inputStr,"ry") != false
 		return SendImg($inputStr,$imgsReplyUrl);
