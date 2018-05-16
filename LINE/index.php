@@ -169,21 +169,6 @@ foreach ($bot->parseEvents() as $event) {
 				$userName = $bot->getProfile($source['userId'])['displayName'];
 				error_log("訊息發送人：".$userName);
 				}
-		    
-			if($event->isRoomEvent()==true || $event->isGroupEvent()==true) //檢查是否為聊天示或群組訊息
-				{
-				  //這邊我有另外加了要先顯示訊息才退出，這看個人使用
-				  $msg = "KEY_WORD bye"("退出聊天室要顯示的訊息");
-				  $bot->replyMessage($replyToken,$msg);
-				  if($event->isGroupEvent()==true)
-				  {
-				    $bot->leaveGroup($event->getGroupId()); //退出群組
-				  }
-				  else if($event->isRoomEvent()==true)
-				  {
-				    $bot->leaveRoom($event->getRoomId()); //退出聊天室
-				  }
-				}
 
 			//對訊息類別做篩選
             switch ($message['type']) {				
